@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+
+#RMarkdown Outputs
+*.pdf
+*.html
+PDF-Paged_files
