@@ -10,7 +10,15 @@ knit: pagedown::chrome_print
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, fig.width = "100%")
+```
+
+```{r libraries, include=FALSE}
+library(tidyverse)
+
+library(lubridate)
+library(janitor)
+library(scales)
 ```
 
 # Introduction
@@ -31,17 +39,35 @@ Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 # Graphs
 
-#### Graph Title
-Subtitle for graph
-
-```{r}
-
+```{r dataset, include=FALSE}
+mac_raw <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-12-22/big-mac.csv') |>
+  clean_names()
 ```
 
 #### Graph Title
 Subtitle for graph
 
-```{r}
+```{r line graph, fig.height=4}
+mac_line <- mac_raw |>
+  filter(iso_a3 == 'AUS' | iso_a3 == 'USA') %>%
+  filter(year(date) < 2020)
+```
 
+
+#### B
+Big Mac prices in US dollars from 2010 to 2020
+
+```{r}
+mac_line |>
+  ggplot(aes(x=date, y=dollar_price, group = iso_a3)) +
+  theme_minimal() +
+  theme(
+    axis.title = element_blank(),
+    panel.grid.minor = element_blank()
+    ) +
+  geom_line(colour='grey') +
+  geom_line(data = . %>% filter(iso_a3 == 'AUS'), colour = 'dark blue') +
+  scale_y_continuous(labels = comma, limits = c(0, 6), expand = c(0,0))
+  
 ```
 
