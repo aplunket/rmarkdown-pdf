@@ -6,11 +6,12 @@ output:
   pagedown::html_paged:
     toc: false
     self_contained: false
+    css: ['styles/brand-0.1.0.css', 'styles/brand-fonts-0.1.0.css', 'styles/brand-page-0.1.0.css']
 knit: pagedown::chrome_print
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, fig.width = "100%")
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
 ```
 
 ```{r libraries, include=FALSE}
@@ -49,7 +50,7 @@ Subtitle for graph
 
 ```{r line graph, fig.height=4}
 mac_line <- mac_raw |>
-  filter(iso_a3 == 'AUS' | iso_a3 == 'USA') %>%
+  filter(iso_a3 == 'AUS') %>%
   filter(year(date) < 2020)
 ```
 
