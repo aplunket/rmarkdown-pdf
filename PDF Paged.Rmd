@@ -21,30 +21,32 @@ library(janitor)
 library(scales)
 ```
 
+# Page Title
+
 <img src="styles/brand-logo.svg" class="footerlogo" style="float:right;"/>
 <div class="footerdisclaimer">
 Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 </div>
 
-# Introduction
+## Introduction
 
 This is an example of a branded paged PDF template based on html_paged in pagedown. 
 
-# Various Text 
+## Section Heading 
 
-## Heading 2
-
-### Heading 3
+### Sub Heading
 
 - Bullet Point 1
 - Bullet Point 2
 - Bullet Point 3
 
+### Sub Heading
+
 Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <div class="pagebreak" />
 
-# Graphs
+## Graphs
 
 ```{r dataset, include=FALSE}
 mac_raw <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-12-22/big-mac.csv') |>
@@ -56,7 +58,6 @@ mac_line <- mac_raw |>
   filter(iso_a3 == 'AUS') %>%
   filter(year(date) < 2020)
 ```
-
 
 #### Graph Title
 Subtitle for graph

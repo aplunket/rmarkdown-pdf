@@ -1,5 +1,7 @@
+/*Add fonts*/
+/*
 @import 'https://fonts.googleapis.com/css2?family=Inter';
-
+*/
 @font-face {
   font-family: 'Inter-Bold';
   src: 
@@ -10,12 +12,35 @@
   src: 
     url(./Inter-Regular.woff2) format('woff2');
 }
-
 html {
   font-family: 'Inter-Regular;
 }
 h1, h2, h3, h4 {
   font-family: 'Inter-Bold';
+}
+/*Text Styles*/
+h1 {
+  font-size: 35pt;
+  text-transform: uppercase;
+  color: #000058;
+}
+h2 {
+  font-size: 20pt;
+  border-bottom: 3px solid #bbccdd;
+  padding-bottom: 3px;
+}
+h3 {
+  font-size: 16pt;
+}
+h4 {
+  font-size: 12pt;
+  margin-bottom: -12pt;
+  padding-bottom: 0;
+}
+body {
+  font-size: 12pt;
+  margin-bottom: -12pt;
+  padding-bottom: 0;
 }
 pre, code {
   font-size: .95em;

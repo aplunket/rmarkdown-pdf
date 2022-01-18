@@ -6,6 +6,5 @@
 .Rproj
 
 #RMarkdown Outputs
-*.pdf
 *.html
 PDF-Paged_files
